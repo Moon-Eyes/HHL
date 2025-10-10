@@ -1,0 +1,192 @@
+\usepackage{booktabs} %三线表需要加载宏包{booktabs}
+\usepackage{diagbox}
+\usepackage{multirow}
+% 斜线表加载宏包{diag}和{multirow}
+\usepackage{booktabs}
+%混合标题表格排版
+
+
+\usepackage{pifont} %圆圈序号 
+
+\usepackage[table]{xcolor} % 注意要添加table选项 表格背景颜色
+
+\usepackage{physics}
+
+
+%页眉页脚设置
+%\pagestyle{plain}
+
+\usepackage{graphicx}             %插入图片格式文件
+\usepackage{float}                %浮动体
+\usepackage{caption}              %图片标题编辑
+\captionsetup[figure]{name=Picture,font={small,it}}
+\usepackage{subcaption}           %子标题
+\subcaptionsetup[figure]{name=Graph,font={small,it}}
+
+%\usepaacakge{psfig}     
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{amsfonts,amssymb,amsthm,amsmath,physics,extarrows}
+\usepackage{multirow, makecell}
+
+\geometry{a4paper, left=1.9cm, right=1.9cm, top=2cm, bottom=1.5cm}
+
+\numberwithin{equation}{section}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks, colorlinks=true, linkcolor=teal, citecolor=black}
+
+%不要页眉就把下面几行注释掉或删掉
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancypagestyle{fancy}{
+\fancyhf{}
+\lhead{\the\year 年 \the\month 月}
+\chead{\centering\@title}
+\rhead{第 \thepage\ 页\ \ 共 \pageref{LastPage}\ 页}
+\lfoot{}
+\cfoot{}
+\rfoot{}}
+\pagestyle{fancy}
+
+
+\def\title#1{\gdef\@title{#1}}
+\def\class#1{\gdef\@class{#1}}
+\def\name#1{\gdef\@name{#1}}
+\def\id#1{\gdef\@id{#1}}
+
+\class{[班级]}\name{[姓名]}\id{[学号]}
+\renewcommand\maketitle{
+    \vspace*{.5em}
+    \begin{center}
+        \LARGE{\textbf\@title}
+    \end{center}
+    \vspace*{.2em}
+    \begin{center}
+        \kaishu{\@class\ \ \@name\ \ \@id}
+    \end{center}
+    \vspace*{1em}
+}
+
+%水印设置
+%\usepackage{draftwatermark}
+
+%\SetWatermarkText{\@title}
+
+%\SetWatermarkLightness{0.9}
+%\SetWatermarkScale{0.5}
+
+
+%标题格式设置
+\usepackage{titlesec}
+%\titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+
+% 定义subsection的格式
+%\titleformat{\subsection}[runin]{\bfseries}{\thesubsection}{1em}{}[]
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{bm}
+
+
+%参考文献超链接格式设置
+%\usepackage[graphicx]{realboxes}
+
+%\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+%\upcite引用角标设置
+
+
+\usepackage{hyperref}
+
+%背景色设置
+\usepackage{hyperref}
+\usepackage{soul} % 导入 soul 包
+\usepackage{color, xcolor} % 颜色包，color 必须导入，xcolor 建议导入
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, theorems}
+
+\usepackage{lipsum}
+
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+%颜色
+
+
+\usepackage{listings}
+\usepackage{xcolor} % 用于颜色支持
+
+% ===== Python 官方风格配色 =====
+% 参考: Python官方Logo/IDLE默认配色
+\definecolor{pythonkeyword}{RGB}{0,82,147}    % 关键字蓝色 (如 def, if)
+\definecolor{pythonbuiltin}{RGB}{0,119,170}   % 内置函数蓝色 (如 print, len)
+\definecolor{pythonstring}{RGB}{170,17,17}    % 字符串暗红色 (PEP 8推荐单引号)
+\definecolor{pythoncomment}{RGB}{102,102,102} % 注释灰色 (PEP 8推荐)
+\definecolor{pythondocstring}{RGB}{0,128,0}   % 文档字符串绿色 (惯例)
+\definecolor{pythontype}{RGB}{136,0,0}        % 类型注解深红 (PEP 484)
+\definecolor{pythonnumber}{RGB}{0,102,102}     % 数字深青色
+\definecolor{pythonfunction}{RGB}{153,0,153}   % 函数名紫色
+\definecolor{pythonclass}{RGB}{230, 159, 0} % 类名橙色 (PEP 8推荐)
+\definecolor{pythonoperator}{RGB}{245, 121, 0} % 运算符橙色 (PEP 8推荐)
+\definecolor{python22}{RGB}{160, 0, 60} % Python 2.2 关键字红色 (PEP 8推荐)
+
+% ===== 代码环境配置 =====
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\small,               % 等宽字体 (PEP 8推荐)
+    keywordstyle=\color{pythonkeyword},        % 关键字
+    commentstyle=\slshape\color{pythoncomment},% 注释斜体 (IDLE风格)
+    stringstyle=\color{pythonstring},          % 字符串
+    numberstyle=\color{pythonnumber},
+    showstringspaces=false,                   % 不显示字符串空格
+    tabsize=4,                                % PEP 8缩进规则
+    breaklines=true,                          % 自动换行
+    frame=single,                     % 单线边框
+    framesep=3pt,                     % 边框与代码间距
+    framerule=1pt,                    % 边框线粗细
+    rulecolor=\color{gray!50},        % 边框颜色（50%灰色）
+    xleftmargin=10pt,                 % 左边框缩进
+    xrightmargin=10pt,                % 右边框缩进
+    % 特殊关键字高亮
+    morekeywords={
+        QuantumCircuit, transpile, Operator, BasicSimulator, RYGate, expm, np, plt, time,
+        None, True, False,                    % 常量
+        self, cls                             % 类相关
+    },
+    keywordstyle=\color{pythonbuiltin},
+    keywordstyle=[2]\color{python22},
+    morecomment=[s][\color{pythondocstring}]{'''}{'''},  % 文档字符串
+    morecomment=[s][\color{pythondocstring}]{"""}{"""},
+    emph={qft, qft_dagger, controlled_U, controlled_R},              % 类型注解
+    emphstyle=\color{pythonoperator}\bfseries,
+    literate=*  % 特殊字符处理
+        {0}{{{\color{pythonnumber}0}}}1
+        {1}{{{\color{pythonnumber}1}}}1
+        {2}{{{\color{pythonnumber}2}}}1
+        {3}{{{\color{pythonnumber}3}}}1
+        {4}{{{\color{pythonnumber}4}}}1
+        {5}{{{\color{pythonnumber}5}}}1
+        {6}{{{\color{pythonnumber}6}}}1
+        {7}{{{\color{pythonnumber}7}}}1
+        {8}{{{\color{pythonnumber}8}}}1
+        {9}{{{\color{pythonnumber}9}}}1
+        {.}{{{\color{pythonnumber}.}}}1
+}
+
+% 定义Python代码环境
+\lstnewenvironment{pythoncode}[1][]{
+    \lstset{style=pythonstyle, #1}
+}{}
+
+
+
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{amssymb}
